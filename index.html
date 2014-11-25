@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Memory Game">
+        <meta name="author" content="Annie Tao">
+
+        <title>Memory Game</title>
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li>Elapsed Time: <span class="elapsedTime"></span> seconds</li>
+                <li>Failed Attempts: <span id="attempts"></span></li>
+                <li>Matches: <span id="matches"></span></li>
+                <li>Remaining Matches: <span id="remainingMatches"></span></li>
+            </ul>
+            <button type="button" class="btn btn-primary" id="reset">Reset</button>
+        </header>
+
+        <main>
+            <div id="title">
+                <h1>Memory Game</h1>
+                <p>By: Annie Tao</p>
+            </div>
+
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Don't know how to play?</a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <h2>Instructions:</h2>
+                            <p>This is a simple game of memorization.</p>
+                            <ol>
+                                <li>Click on a tile to flip it over.</li>
+                                <li>Attempt to find its matching pair.</li>
+                                <li>If it's matching, congrats! You found a pair and the tiles will remain displayed. If not, try again.</li>
+                                <li>Once all the tiles have been flipped over, you've won the game!</li>
+                            </ol>
+                            <p>After you've won, reset to beat your previous time. Have fun!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="gameBoard"> </div>
+
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title">You won Memory Game!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Congratulations, you won in <span class="elapsedTime"></span> seconds! Click "Play again!" to restart a new game or click "Close" to look at your impressive work.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalPlayAgain">Play again!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <script src="js/jQuery-2.1.1.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
