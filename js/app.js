@@ -61,7 +61,6 @@ $(document).ready(function () {
 				alt: 'image of tile ' + currentTileInfo.tileNum
 			});
 			newTile.data('tileInfo', currentTileInfo);
-			console.log(currentTileInfo);
 			gameBoard.append(newTile);
 		}
 		$('#gameBoard img').click(flipImg);
